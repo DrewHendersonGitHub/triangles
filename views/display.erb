@@ -1,0 +1,16 @@
+<h3>Your triangle is...</h3>
+
+<% if @triangle.is_triangle? %>
+  <p> Not a triangle!! </p>
+<% elsif @triangle.equilateral? %>
+  <p> Equilateral!! </p>
+<% elsif @triangle.isosceles? %>
+  <p> Isosceles!! </p>
+<% elsif @triangle.scalene? %>
+  <p> Scalene!! <p>
+<% end %>
+<p> Side 1: <%= @triangle.side1 %> </p>
+<p> Side 2: <%= @triangle.side2 %> </p>
+<p> Side 3: <%= @triangle.side3 %> </p>
+
+<a href='/'> Click here to return </a>

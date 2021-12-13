@@ -1,11 +1,10 @@
 class Triangle
   attr_accessor(:side1, :side2, :side3)
-  @@triangles = {}
   
   def initialize(side1, side2, side3)
-    @side1 = side1
-    @side2 = side2
-    @side3 = side3
+    @side1 = side1.to_i
+    @side2 = side2.to_i
+    @side3 = side3.to_i
   end
 
   def equilateral?
@@ -33,10 +32,10 @@ class Triangle
   end
 
   def is_triangle?
-    if (@side1 + @side2 <= @side3) || (@side1 + @side3 <= @side2) || (@side2 + @side3 <= @side1)
-      false
-    else
+    if (@side1 + @side2 <= @side3 || @side1 + @side3 <= @side2 || @side2 + @side3 <= @side1)
       true
+    else
+      false
     end
   end
 end
